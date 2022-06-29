@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: "nginx-1"
-        image: "gcr.io/ringed-land-354108/apache-task3:dev"
+        image: "gcr.io/ringed-land-354108/apache-task3:prod"
 ---
 apiVersion: "autoscaling/v2beta1"
 kind: "HorizontalPodAutoscaler"

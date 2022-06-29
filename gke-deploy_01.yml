@@ -1,10 +1,10 @@
 steps:
   # build the container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/ringed-land-354108/apache-task3:dev", "."]
+  args: ["build", "-t", "gcr.io/ringed-land-354108/apache-task3:prod", "."]
   # push container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/ringed-land-354108/apache-task3:dev"]
+  args: ["push", "gcr.io/ringed-land-354108/apache-task3:prod"]
   # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
