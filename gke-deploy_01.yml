@@ -1,17 +1,15 @@
 steps:
   # build the container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/ringed-land-354108/apache-task3:prod", "."]
+  args: ["build", "-t", "gcr.io/ringed-land-354108/adarsh-task3:adarsh", "."]
   # push container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/ringed-land-354108/apache-task3:prod"]
+  args: ["push", "gcr.io/ringed-land-354108/adarsh-task3:adarsh"]
   # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
   - --filename=app.yml
+  - --image=gcr.io/ringed-land-354108/adarsh-task3:adarsh
   - --location=us-central1-c
-  - --cluster=adarsh-cluster
-  - --namespace=$BRANCH_NAME
-options:
-  logging: CLOUD_LOGGING_ONLY
+  - --cluster=adarsh-cluster-1

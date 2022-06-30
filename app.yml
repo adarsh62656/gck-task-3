@@ -18,22 +18,4 @@ spec:
     spec:
       containers:
       - name: "nginx-1"
-        image: "gcr.io/ringed-land-354108/apache-task3:prod"
-        ports:
-            - name: web
-              containerPort: 80
-              protocol: TCP
----
-apiVersion: "v1"
-kind: "Service"
-metadata:
-  name: "hello-world-service"
-  namespace: "default"
-spec:
-  ports:
-  - protocol: "TCP"
-    port: 80
-  selector:
-    app: "hello-world"
-  type: "LoadBalancer"
-  loadBalancerIP: ""
+        image: "gcr.io/ringed-land-354108/adarsh-task3:adarsh"
